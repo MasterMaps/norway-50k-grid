@@ -6,7 +6,7 @@ L.Projection.UTM33 = {
 	DEG_TO_RAD: Math.PI / 180,
 	RAD_TO_DEG: 180 / Math.PI,
 
-	bounds: L.bounds([-80000, 6445000], [1120000, 7945000]),
+	bounds: L.bounds([-2500000, 3500000], [3045984, 9045984]),
 
 	project: function (latlng) {
 		var latRad = latlng.lat * this.DEG_TO_RAD, 
@@ -56,11 +56,13 @@ L.Projection.UTM33 = {
 	}
 };
 
+// http://www.statkart.no/Kart/Gratis-kartdata/Cache-tjenester/
 L.CRS.EPSG32633 = L.extend({}, L.CRS.Earth, {
 	code: 'EPSG:32633',
 	projection: L.Projection.UTM33,
-	transformation: new L.Transformation(1, 80000, -1, 7945000),
-	scale: function(zoom) {
-		return 1 / ( 4687.5 / Math.pow(2, zoom));
-	}	
+	transformation: new L.Transformation(1, 2500000, -1, 9045984),
+
+	scale: function (zoom) {
+		return 1 / ( 21664 / Math.pow(2, zoom));
+	}
 });

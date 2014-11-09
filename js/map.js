@@ -1,17 +1,27 @@
 (function(){ 'use strict';
 
+	var bounds = [[57, 4], [71, 32]];
+
 	var map = L.map('map', {
-		crs: L.CRS.EPSG32633
+		crs: L.CRS.EPSG32633,
+ 		continuousWorld: true,
+		worldCopyJump: false		
 	});
 
-	map.fitBounds([[57.76914, 5.22972], [70.81525, 32.10659]]);
+	map.fitBounds(bounds);
 
 	L.geoJson(norway, {
 		weight: 1
 	}).addTo(map);
 
-	L.terrainGrid().addTo(map);
+	/*
+	L.tileLayer('http://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=norges_grunnkart&STYLE=default&TILEMATRIXSET=EPSG:32633&TILEMATRIX=EPSG:32633:{z}&TILEROW={y}&TILECOL={x}&FORMAT=image/png', {
+		attribution: 'Kartverket',
+		bounds: bounds
+	}).addTo(map);
+	*/
 
-	L.marker([60.598144,7.507339]).addTo(map);
+	L.norwayGrid().addTo(map);
+
 
 })();

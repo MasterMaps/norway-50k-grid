@@ -69,8 +69,11 @@ L.NorwayGrid = L.FeatureGroup.extend({
 			weight: 1,
 			color: '#f00'
 		}).bindPopup(
-			'Tile: [' + x + ', ' + y + ']<br><br>' + 
-			'Bounds: ' + west + ' ' + south + ' ' + east + ' ' + north
+			'<pre>Tile:  [' + x + ', ' + y + ']' + 
+			'<br>West:  ' + west +
+			'<br>East:  ' + east + 
+			'<br>South: ' + south + 
+			'<br>North: ' + north + '</pre>'
 		);
 	},
 

@@ -70,7 +70,7 @@ L.NorwayGrid = L.FeatureGroup.extend({
 			color: '#f00'
 		}).bindPopup(
 			'Tile: [' + x + ', ' + y + ']<br><br>' + 
-			'gdalwarp -te ' + west + ' ' + south + ' ' + east + ' ' + north
+			'Bounds: ' + west + ' ' + south + ' ' + east + ' ' + north
 		);
 	},
 

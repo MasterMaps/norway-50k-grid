@@ -14,14 +14,6 @@
 		weight: 1
 	}).addTo(map);
 
-	/*
-	L.tileLayer('http://opencache.statkart.no/gatekeeper/gk/gk.open_wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=norges_grunnkart&STYLE=default&TILEMATRIXSET=EPSG:32633&TILEMATRIX=EPSG:32633:{z}&TILEROW={y}&TILECOL={x}&FORMAT=image/png', {
-		attribution: 'Kartverket',
-		bounds: bounds
-	}).addTo(map);
-	*/
-
 	L.norwayGrid().addTo(map);
-
 
 })();
